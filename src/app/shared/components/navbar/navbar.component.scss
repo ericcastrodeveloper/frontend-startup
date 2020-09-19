@@ -1,0 +1,218 @@
+.nav {
+  display: flex;
+  width: 98%;
+  height: 100%;
+  align-items: center;
+  align-content: center;
+
+  &-icon {
+    &__home {
+      height: 8vh;
+      width: 5%;
+      border-radius: 100px;
+      margin: 5px 20px 5px 20px;
+      cursor: pointer;
+      position: relative;
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+
+      &:hover > * {
+        display: block !important;
+      }
+
+      .icon__home {
+        width: 41px;
+        height: 41px;
+        fill: var(--color-ED145B);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &__contacts {
+      height: 8vh;
+      width: 15%;
+      border-radius: 100px;
+      margin: 5px 0px 5px 0px;
+      cursor: pointer;
+      position: relative;
+
+      &:hover > * {
+        display: block !important;
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+
+      .icon__contacts {
+        width: 41px;
+        height: 41px;
+        fill: var(--color-ED145B);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &__projects {
+      height: 8vh;
+      width: 15%;
+      border-radius: 100px;
+      margin: 5px 0px 5px 0px;
+      cursor: pointer;
+      position: relative;
+
+      &:hover > * {
+        display: block !important;
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+
+      .icon__projects {
+        width: 41px;
+        height: 41px;
+        fill: var(--color-ED145B);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &__messages {
+      height: 8vh;
+      width: 15%;
+      border-radius: 100px;
+      margin: 5px 0px 5px 0px;
+      cursor: pointer;
+      position: relative;
+
+      &:hover > * {
+        display: block !important;
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+
+      .icon__messages {
+        width: 41px;
+        height: 41px;
+        fill: var(--color-ED145B);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &__notify {
+      position: relative;
+      height: 8vh;
+      width: 15%;
+      border-radius: 100px;
+      margin: 5px 0px 5px 0px;
+      cursor: pointer;
+
+      &:hover > *:not(.icon__notify--number) {
+        display: block !important;
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+
+      .icon__notify {
+        width: 41px;
+        height: 41px;
+        fill: var(--color-ED145B);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        &--number {
+          height: 18px;
+          width: 18px;
+          border-radius: 100px;
+          background: var(--color-E4E4E4);
+          position: absolute;
+          right: 15px;
+          top: 8px;
+          z-index: 9;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+        }
+      }
+    }
+
+    &__user {
+      height: 8vh;
+      width: 15%;
+      border-radius: 100px;
+      margin: 5px 0px 5px 0px;
+      cursor: pointer;
+      position: relative;
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+
+      &:hover > * {
+        display: block !important;
+      }
+
+      .icon__user {
+        width: 41px;
+        height: 41px;
+        fill: var(--color-ED145B);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .buttons {
+    justify-content: flex-end;
+    display: flex;
+    height: 100%;
+    width: 40%;
+  }
+
+  &-search {
+    cursor: text;
+    border: 2px solid var(--color-ED145B);
+    height: 40px;
+    width: 60%;
+    margin: 5px 0px 5px 0px;
+    border-radius: 16px;
+  }
+}
+
+.tooltip--disable {
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  display: none;
+  animation: cubic-bezier(0.17, 0.67, 0.78, -0.16);
+}

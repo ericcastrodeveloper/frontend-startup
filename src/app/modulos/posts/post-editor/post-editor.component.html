@@ -1,0 +1,55 @@
+<div class="container">
+  <app-navbar class="nav"></app-navbar>
+  <div
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="box-inputs"
+  >
+    <div class="input">
+      <label class="input__label">Titulo</label>
+      <input
+        type="text"
+        name="title"
+        [(ngModel)]="post.title"
+        placeholder="Titulo"
+      />
+    </div>
+    <div class="input">
+      <label class="input__label">Descrição</label>
+      <textarea
+        type="text"
+        [(ngModel)]="post.description"
+        placeholder="Descrição"
+      ></textarea>
+    </div>
+    <div class="gallery">
+      <label class="input__label">Galeria</label>
+      <div class="box-img" *ngFor="let img of post.files">
+        <img (click)="openExplorer(img)" [src]="img.data" alt="Imagem" />
+        <input
+          [id]="'image-'+img.id"
+          type="file"
+          (change)="changeFile($event, img)"
+          placeholder="Principal image"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="box-buttons"
+  >
+    <div class="button--save" (click)="savePost()">
+      <svg class="icon__save">
+        <use xlink:href="assets/sprite.svg#save" />
+      </svg>
+      <app-tooltip class="tooltip--disable" [label]="'Save'"></app-tooltip>
+    </div>
+  </div>
+  <app-loader
+    [ngClass]="loader == true ? 'loader--active' : 'loader--disable'"
+  ></app-loader>
+  <app-snackbar
+    (callbackClick)="confirmSnack()"
+    [ngClass]="snackbar == true ? 'loader--active' : 'loader--disable'"
+  ></app-snackbar>
+</div>

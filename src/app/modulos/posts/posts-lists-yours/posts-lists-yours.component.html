@@ -1,0 +1,35 @@
+<div class="container">
+  <app-navbar class="nav"></app-navbar>
+  <div
+    class="main"
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+  >
+    <div class="card" *ngFor="let post of posts">
+      <div class="card__img">
+        <img alt="Image post" [src]="post.files[0].data" />
+      </div>
+      <div class="card__title">
+        {{ post.title }}
+      </div>
+      <div class="card__buttons">
+        <div
+          class="button"
+          *ngIf="verifyStatusPost(post.status)"
+          (click)="disablePost(post)"
+        >
+          <svg class="icon__delete">
+            <use xlink:href="assets/sprite.svg#delete" />
+          </svg>
+        </div>
+        <div class="button" [routerLink]="['/post/edit/', post.id]">
+          <svg class="icon__edit">
+            <use xlink:href="assets/sprite.svg#edit" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-loader
+    [ngClass]="loader == true ? 'loader--active' : 'loader--disable'"
+  ></app-loader>
+</div>

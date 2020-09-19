@@ -1,0 +1,66 @@
+<div class="container">
+  <app-navbar class="nav"></app-navbar>
+  <div class="info-user sidebar" [ngClass]="loader == true ? 'loader--disable' : 'loader--active'">
+    <div class="info-user__img">
+      <img class="img-user" src="assets/user-icon.jpg" alt="user icon" />
+    </div>
+    <div class="info-user__welcome">
+      Olá, Fulano
+    </div>
+    <div class="info-user__top-3">
+      <div class="top-3">
+          TOP 3 IDEAS DA SEMANA
+      </div>
+    </div>
+    <div class="info-user__yours-idea">
+      <div class="yours-idea">
+          SUAS IDEIAS
+      </div>
+    </div>
+  </div>
+  <section
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="section-posts main"
+  >
+    <div class="box-posts">
+      <div class="card-post" *ngFor="let post of posts">
+        <div class="card-post__img-user">
+          <img class="img-user" src="assets/user-icon.jpg" alt="user icon" />
+        </div>
+        <div class="card-post__title">
+          {{ post.title }}
+        </div>
+        <div class="card-post__description">
+          {{ post.description }}
+        </div>
+        <div [routerLink]="['/post/details', post.id]" class="card-post__img-principal">
+          <img
+            class="img-principal"
+            [src]="post.files[0].data"
+            alt="image post"
+          />
+        </div>
+        <div class="card-post__buttons">
+          <div class="button__like">
+            <svg class="icon__like">
+              <use xlink:href="assets/sprite.svg#like" />
+            </svg>
+          </div>
+          <div class="button__later">
+            <svg class="icon__later">
+              <use xlink:href="assets/sprite.svg#folder" />
+            </svg>
+          </div>
+          <div class="button__share">
+            <svg class="icon__label">
+              <use xlink:href="assets/sprite.svg#share" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-loader
+    [ngClass]="loader == true ? 'loader--active' : 'loader--disable'"
+  ></app-loader>
+</div>

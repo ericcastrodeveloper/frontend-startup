@@ -1,0 +1,192 @@
+@import "../../../shared/theme/grids/messages-list.scss";
+
+.title__side-menu {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    color: var(--color-E4E4E4);
+    font-size: 2.5rem;
+    padding: 5px;
+  }
+}
+
+.input__search {
+  height: 32px;
+  border: 2px solid var(--color-ED145B);
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border-radius: 100px;
+  cursor: text;
+}
+
+.box-message {
+  .card-message {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    border: 2px solid var(--color-ED145B);
+    margin-bottom: 5px;
+    position: relative;
+
+    .card-mark {
+      height: 16px;
+      width: 21px;
+      background: var(--color-ED145B);
+      position: absolute;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0%);
+      right: 0%;
+    }
+
+    .img-message {
+      position: relative;
+      width: 80px;
+      height: 100%;
+
+      .img-user {
+        height: 50px;
+        width: 50px;
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .name-message {
+      color: var(--color-E4E4E4);
+      font-size: 2.5rem;
+      padding: 5px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.card-message-principal {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  border: 2px solid var(--color-ED145B);
+  margin-bottom: 5px;
+
+  .img-message {
+    position: relative;
+    width: 80px;
+    height: 100%;
+
+    .img-user {
+      height: 50px;
+      width: 50px;
+      left: 50%;
+      top: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .name-message {
+    color: var(--color-E4E4E4);
+    font-size: 2.5rem;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.card-message {
+  height: 80%;
+  width: 100%;
+  border: 2px solid var(--color-ED145B);
+  margin-bottom: 5px;
+}
+
+.card-send {
+  height: 70px;
+  width: 100%;
+  border: 2px solid var(--color-ED145B);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+
+  .send__search {
+    cursor: text;
+    height: 32px;
+    border: 2px solid var(--color-ED145B);
+    margin-left: 20px;
+    border-radius: 100px;
+    width: 140%;
+  }
+
+  .send__button {
+    cursor: pointer;
+    width: 20%;
+    height: 13px;
+    position: relative;
+    margin: 5px;
+    position: relative;
+
+    .icon {
+      &__send {
+        fill: var(--color-ED145B);
+        cursor: pointer;
+        width: 22px;
+        height: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &:hover > * {
+      display: block !important;
+    }
+  }
+}
+
+.card-message {
+  &-a {
+    margin-top: 5px;
+    color: var(--color-E4E4E4);
+    padding: 5px;
+    display: flex;
+    text-align: start;
+    width: 100%;
+    justify-content: start;
+
+    .message-a-time {
+      font-size: 1rem;
+    }
+
+    .message-a-message {
+      margin-left: 20px;
+      font-size: 1.5rem;
+      width: 45%;
+    }
+  }
+
+  &-b {
+    margin-top: 5px;
+    color: var(--color-E4E4E4);
+    padding: 5px;
+    display: flex;
+    text-align: end;
+    width: 100%;
+    justify-content: flex-end;
+
+    .message-b-time {
+      font-size: 1rem;
+    }
+
+    .message-b-message {
+      margin-right: 20px;
+      width: 45%;
+      font-size: 1.5rem;
+    }
+  }
+}

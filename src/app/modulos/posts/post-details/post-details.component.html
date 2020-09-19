@@ -1,0 +1,129 @@
+<div class="container">
+  <app-navbar class="nav"></app-navbar>
+  <div
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="post-principal-photo box-img-principal"
+  >
+    <img [src]="post.files[0].data" />
+  </div>
+  <div
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="post-title"
+  >
+    <label class="title">{{ post.title }}</label>
+  </div>
+  <div
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="post-menu-buttons-social"
+  >
+    <div class="buttons-social buttons-social--like">
+      <div class="button">
+        <svg class="icon__like">
+          <use xlink:href="assets/sprite.svg#like" />
+        </svg>
+        <app-tooltip class="tooltip--disable" [label]="'Curtir'"></app-tooltip>
+      </div>
+    </div>
+    <div class="buttons-social buttons-social--share">
+      <div class="button">
+        <svg class="icon__label">
+          <use xlink:href="assets/sprite.svg#share" />
+        </svg>
+        <app-tooltip
+          class="tooltip--disable"
+          [label]="'Compartilhar'"
+        ></app-tooltip>
+      </div>
+    </div>
+    <div class="buttons-social buttons-social--comment">
+      <div class="button">
+        <svg class="icon__talk">
+          <use xlink:href="assets/sprite.svg#talk" />
+        </svg>
+        <app-tooltip
+          class="tooltip--disable"
+          [label]="'Comentar'"
+        ></app-tooltip>
+      </div>
+    </div>
+  </div>
+  <div
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="post-preview-info"
+  >
+    <div class="preview-info">
+      <div class="preview-icon">
+        <div class="preview-icon--local">
+          <svg class="icon__local">
+            <use xlink:href="assets/sprite.svg#local" />
+          </svg>
+        </div>
+        <div class="preview__label">
+          São Paulo / SP
+        </div>
+      </div>
+    </div>
+    <div class="preview-info">
+      <div class="preview-icon">
+        <div class="preview-icon--flex">
+          <div class="preview-icon--muscle">
+            <svg class="icon__muscle">
+              <use xlink:href="assets/sprite.svg#muscle" />
+            </svg>
+          </div>
+          <div class="preview-icon--money-bag">
+            <svg class="icon__money-bag">
+              <use xlink:href="assets/sprite.svg#money-bag" />
+            </svg>
+          </div>
+        </div>
+        <div class="preview__label">
+          Tipo de ajuda
+        </div>
+      </div>
+    </div>
+    <div class="preview-info">
+      <div class="preview-icon">
+        <div class="preview-icon--type">
+          <svg class="icon__type">
+            <use xlink:href="assets/sprite.svg#nicho-tecnology" />
+          </svg>
+        </div>
+        <div class="preview__label">
+          Tecnologia
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="post-menu-buttons"
+  >
+    <div class="squad-button">
+      <div class="help-us">
+        <label>Como ajudar?</label>
+      </div>
+    </div>
+    <div class="squad-button">
+      <div class="info">
+        <label>Descrição</label>
+      </div>
+    </div>
+    <div class="squad-button">
+      <div class="faq">
+        <label>FAQ</label>
+      </div>
+    </div>
+  </div>
+  <div
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="post-description"
+  >
+    <label class="description">
+      {{ post.description }}
+    </label>
+  </div>
+  <app-loader
+    [ngClass]="loader == true ? 'loader--active' : 'loader--disable'"
+  ></app-loader>
+</div>

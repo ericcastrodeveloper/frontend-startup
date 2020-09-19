@@ -1,0 +1,96 @@
+@import "../../../shared/theme/grids/posts-editor.scss";
+
+.input {
+  margin: 20px 0px 20px 0px;
+  display: flex;
+
+  &__label {
+    color: var(--color-E4E4E4);
+    width: 140px;
+    font-size: 2rem;
+    margin-right: 10px;
+    color: var(--color-E4E4E4);
+  }
+}
+
+input,
+textarea {
+  border-radius: 8px;
+  padding: 11px;
+  width: 80%;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+  height: 35px;
+}
+
+textarea {
+  height: 150px;
+}
+
+.button {
+  &--save {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    right: 5%;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+
+    .icon__save {
+      cursor: pointer;
+      width: 41px;
+      height: 41px;
+      fill: var(--color-ED145B);
+    }
+
+    &:hover > * {
+      display: block !important;
+    }
+  }
+}
+
+.gallery {
+  .input__label {
+    width: 100% !important;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .box-img {
+    border: 2px solid var(--color-ED145B);
+    margin: 5px;
+    width: 250px;
+    height: 150px;
+
+    img {
+      cursor: pointer;
+      width: 246px;
+      height: 146px;
+    }
+
+    input {
+      display: none;
+    }
+  }
+}
+
+.tooltip--disable {
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  display: none;
+  animation: cubic-bezier(0.17, 0.67, 0.78, -0.16);
+}

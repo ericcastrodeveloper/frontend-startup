@@ -1,0 +1,30 @@
+.tooltip {
+  text-align: center;
+  width: 75px;
+  color: var(--color-E4E4E4);
+  background: var(--color-101010);
+  border: 2px solid var(--color-ED145B);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  height: 22px;
+  transform: translate(-50%, 0%);
+  border-radius: 15px;
+  justify-content: center;
+  display: flex;
+  animation: cubic-bezier(0.17, 0.67, 0.78, -0.16);
+  z-index: 1;
+}
+
+.tooltip:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 19px;
+  transform: translate(-50%, 0%);
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom-color: var(--color-ED145B);
+}

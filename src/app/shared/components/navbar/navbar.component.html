@@ -1,0 +1,52 @@
+<nav class="nav">
+  <div class="nav-icon__home" routerLink="/">
+    <svg class="icon__home">
+      <use xlink:href="assets/sprite.svg#home" />
+    </svg>
+    <app-tooltip class="tooltip--disable" [label]="'Home'" ></app-tooltip>
+  </div>
+
+  <div class="nav-search"></div>
+
+  <div class="buttons">
+    <div class="nav-icon__projects" routerLink="/post/list/yours">
+      <svg class="icon__projects">
+        <use xlink:href="assets/sprite.svg#projects" />
+      </svg>
+      <app-tooltip class="tooltip--disable" [label]="'Projetos'" ></app-tooltip>
+    </div>
+
+    <div class="nav-icon__contacts" routerLink="/contacts/list">
+      <svg class="icon__contacts">
+        <use xlink:href="assets/sprite.svg#contacts" />
+      </svg>
+      <app-tooltip class="tooltip--disable" [label]="'Rede'" ></app-tooltip>
+    </div>
+
+    <div class="nav-icon__messages" routerLink="/messages/list/">
+      <svg class="icon__messages">
+        <use xlink:href="assets/sprite.svg#messages" />
+      </svg>
+      <app-tooltip class="tooltip--disable" [label]="'Mensagens'" ></app-tooltip>
+    </div>
+
+    <div class="nav-icon__notify" (click)="showTooltipMenuNotify()">
+      <div class="icon__notify--number">
+        1
+      </div>
+      <svg class="icon__notify">
+        <use xlink:href="assets/sprite.svg#notify" />
+      </svg>
+      <app-tooltip *ngIf="!showTooltipNotify" class="tooltip--disable" [label]="'Notificações'" ></app-tooltip>
+      <app-tooltip-notify *ngIf="showTooltipNotify" ></app-tooltip-notify>
+    </div>
+
+    <div class="nav-icon__user" (click)="showTooltipMenuUser()">
+      <svg class="icon__user">
+        <use xlink:href="assets/sprite.svg#user" />
+      </svg>
+      <app-tooltip *ngIf="!showTooltipUser" class="tooltip--disable" [label]="'Menu'" ></app-tooltip>
+      <app-tooltip-menu-user *ngIf="showTooltipUser" ></app-tooltip-menu-user>
+    </div>
+  </div>
+</nav>

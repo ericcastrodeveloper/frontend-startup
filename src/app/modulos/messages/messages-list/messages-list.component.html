@@ -1,0 +1,71 @@
+<div class="container">
+  <app-navbar class="nav"></app-navbar>
+  <div class="side-menu">
+    <div class="title__side-menu">
+      <div class="title">
+        Mensagens
+      </div>
+    </div>
+    <div class="input__search"></div>
+    <div class="box-message">
+      <div class="card-message">
+        <div class="card-mark">
+          
+        </div>
+        <div class="img-message">
+          <img class="img-user" src="assets/user-icon.jpg" alt="user icon" />
+        </div>
+        <div class="name-message">
+          Fulano A
+        </div>
+      </div>
+      <div class="card-message">
+        <div class="img-message">
+          <img class="img-user" src="assets/user-icon.jpg" alt="user icon" />
+        </div>
+        <div class="name-message">
+          Fulano B
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="card-message-principal">
+      <div class="img-message">
+        <img class="img-user" src="assets/user-icon.jpg" alt="user icon" />
+      </div>
+      <div class="name-message">
+        Fulano A
+      </div>
+    </div>
+
+    <div class="card-message">
+      <div class="card-message-a">
+        <div class="message-a-message">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nobis incidunt a quod asperiores rem doloribus sit quam ullam, dolore accusamus reiciendis corporis natus. Maxime illo reiciendis quae ullam cum.
+          <div class="message-a-time">
+            19/01/2050 22:53
+          </div>
+        </div>
+      </div>
+      <div class="card-message-b">
+        <div class="message-b-message">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nobis incidunt a quod asperiores rem doloribus sit quam ullam, dolore accusamus reiciendis corporis natus. Maxime illo reiciendis quae ullam cum.
+          <div class="message-b-time">
+            19/01/2050 22:53
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-send">
+      <div class="send__search"></div>
+      <div class="send__button">
+        <svg class="icon__send">
+          <use xlink:href="assets/sprite.svg#send" />
+        </svg>
+        <app-tooltip class="tooltip--disable" [label]="'Enviar'" ></app-tooltip>
+      </div>
+    </div>
+  </div>
+</div>

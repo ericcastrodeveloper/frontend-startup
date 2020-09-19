@@ -1,0 +1,61 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // Define 1 rem
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: "MuseoModerno", cursive;
+}
+
+:root {
+  --color-46494a: #46494a;
+  --color-1E2122: #1e2122;
+  --color-101010: #101010;
+  --color-E4E4E4: #e4e4e4;
+  --color-ED145B: #ed145b;
+}
+
+app-loader {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+app-loader {
+  height: 100vh;
+}
+
+.loader {
+  &--disable {
+    display: none !important;
+  }
+
+  &--active {
+  }
+}
+
+.snackbar {
+  &--disable {
+    display: none !important;
+  }
+
+  &--active {
+  }
+}
+
+
+.tooltip--disable {
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  display: none;
+  animation: cubic-bezier(0.17, 0.67, 0.78, -0.16);
+}

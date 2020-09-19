@@ -1,0 +1,33 @@
+<div class="container">
+  <app-navbar class="nav"></app-navbar>
+  <div class="main">
+    <div class="card" *ngFor="let contato of contatos">
+      <div class="card__img">
+        <img class="img-user" src="assets/user-icon.jpg" alt="user icon" />
+      </div>
+      <div class="card__title">
+        Fulano A
+      </div>
+      <div class="card__send-invite">
+        <div class="button--invite">
+          <svg class="icon__connection">
+            <use xlink:href="assets/sprite.svg#connection" />
+          </svg>
+          <app-tooltip
+            class="tooltip--disable"
+            [label]="'Convidar'"
+          ></app-tooltip>
+        </div>
+        <div class="button--exclude">
+          <svg class="icon__prohibition">
+            <use xlink:href="assets/sprite.svg#prohibition" />
+          </svg>
+          <app-tooltip
+            class="tooltip--disable"
+            [label]="'Bloquear'"
+          ></app-tooltip>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+.container {
+  display: grid;
+  grid-template-columns: minmax(14vw, 14vw) minmax(70vw, 70vw) minmax(14vw, auto);
+  grid-template-rows: 10vh minmax(50vh, 50vh) 40px 10vh 8vh 17vh 40vh;
+
+  grid-template-areas:
+    "navbar navbar navbar"
+    "post-principal-photo post-principal-photo post-principal-photo"
+    "side post-menu-buttons-social side-right"
+    "side post-title side-right"
+    "side post-preview-info side-right"
+    "side post-menu-buttons side-right"
+    "side post-description side-right";
+
+  background: linear-gradient(
+    to right,
+    var(--color-101010),
+    var(--color-1E2122)
+  );
+
+  .nav {
+    grid-area: navbar;
+    background-color: var(--color-101010);
+    position: fixed;
+    width: 100vw;
+    z-index: 99;
+  }
+
+  .post-title {
+    grid-area: post-title;
+  }
+
+  .post-principal-photo {
+    grid-area: post-principal-photo;
+  }
+
+  .post-preview-info {
+    grid-area: post-preview-info;
+  }
+
+  .post-menu-buttons-social {
+    grid-area: post-menu-buttons-social;
+    display: flex;
+    align-items: flex-end;
+    height: 40px;
+    justify-content: flex-end;
+    margin-top: 5px;
+  }
+
+  .post-menu-buttons {
+    grid-area: post-menu-buttons;
+  }
+
+  .post-description {
+    grid-area: post-description;
+  }
+}

@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  grid-template-columns: 30% auto 20%;
+  grid-template-rows: 10vh minmax(90vh, auto);
+  grid-template-areas:
+    "navbar navbar navbar"
+    "sidebar main sidebar-right";
+  background: linear-gradient(
+    to right,
+    var(--color-101010),
+    var(--color-1E2122)
+  );
+
+  .nav {
+    grid-area: navbar;
+    background-color: var(--color-101010);
+    position: fixed;
+    width: 100vw;
+    z-index: 99;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  .sidebar-right {
+    grid-area: sidebar-right;
+  }
+}

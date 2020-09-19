@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  grid-template-columns: 5vw 90vw 5vw;
+  grid-template-rows: 10vh 10vh minmax(80vh, auto);
+  grid-template-areas:
+    "navbar navbar navbar"
+    "side filter-box side-right"
+    "side main side-right";
+  background: linear-gradient(
+    to right,
+    var(--color-101010),
+    var(--color-1E2122)
+  );
+
+  .nav {
+    grid-area: navbar;
+    background-color: var(--color-101010);
+    position: fixed;
+    width: 100vw;
+    z-index: 99;
+  }
+
+  .filter {
+    grid-area: filter-box;
+  }
+
+  .main {
+    grid-area: main;
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+  }
+}

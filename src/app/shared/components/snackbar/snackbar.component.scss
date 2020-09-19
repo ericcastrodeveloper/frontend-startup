@@ -1,0 +1,54 @@
+.box-snack {
+  width: 500px;
+  height: 80px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--color-ED145B);
+  border-right: 2px solid var(--color-ED145B);
+
+  &::after {
+    bottom: 0;
+    left: 0;
+    border-left: 2px solid var(--color-ED145B);
+    height: 30%;
+  }
+
+  &::before {
+    top: 0;
+    right: 0;
+    border-top: 2px solid var(--color-ED145B);
+    width: 98%;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.text-message {
+  font-size: 2.5rem;
+  color: var(--color-E4E4E4);
+  margin-right: 10px;
+}
+
+.button {
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--color-E4E4E4);
+  border: 2px solid var(--color-ED145B);
+  border-radius: 100px;
+  padding: 3px;
+  width: 80px;
+  height: 50px;
+}
