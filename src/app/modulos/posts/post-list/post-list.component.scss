@@ -98,7 +98,7 @@
               transform: translate(-50%, -50%);
             }
 
-            &:hover > * {
+            &:hover > *:not(.icon__notify--number) {
               display: block !important;
             }
           }
@@ -123,7 +123,7 @@
               transform: translate(-50%, -50%);
             }
 
-            &:hover > * {
+            &:hover > *:not(.icon__notify--number) {
               display: block !important;
             }
           }
@@ -148,7 +148,7 @@
               transform: translate(-50%, -50%);
             }
 
-            &:hover > * {
+            &:hover > *:not(.icon__notify--number) {
               display: block !important;
             }
           }
@@ -173,7 +173,7 @@
               transform: translate(-50%, -50%);
             }
 
-            &:hover > * {
+            &:hover > *:not(.icon__notify--number) {
               display: block !important;
             }
           }
@@ -216,6 +216,11 @@
     font-size: 2.5rem;
     padding: 25px;
     text-align: center;
+
+    &--small {
+      font-size: 1.5rem;
+    }
+
   }
 
   &__top-3 {
@@ -275,4 +280,23 @@
   left: 0;
   border-bottom: 8px solid var(--color-ED145B);
   width: 70%;
+}
+
+
+.icon__notify--number {
+    height: 18px;
+    width: 18px;
+    border-radius: 100px;
+    background: var(--color-1E2122-transparent);
+    border: 1px solid var(--color-ED145B);
+    color: var(--color-E4E4E4);
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  
 }

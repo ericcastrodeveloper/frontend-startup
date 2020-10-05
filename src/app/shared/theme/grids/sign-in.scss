@@ -1,0 +1,43 @@
+.container {
+  display: grid;
+  grid-template-columns:
+    minmax(15vw, 20vw) minmax(70vw, 70vw) minmax(15vw, 20vw);
+  grid-template-rows: 10vh minmax(70vh, auto) 10vh 10vh;
+
+  grid-template-areas:
+    "navbar navbar  navbar"
+    "side box-inputs side-right"
+    "side box-buttons side-right"
+    "footer footer footer";
+
+  background: linear-gradient(
+    to right,
+    var(--color-101010),
+    var(--color-1E2122)
+  );
+
+  .nav {
+    grid-area: navbar;
+    background-color: var(--color-101010);
+    position: fixed;
+    width: 100vw;
+    z-index: 99;
+  }
+
+  .box-inputs {
+    grid-area: box-inputs;
+    background-color: var(--color-1E2122);
+    padding: 20px;
+    margin: 10px 0px 10px 0px;
+    border-radius: 23px;
+    width: 70vw;
+  }
+
+  .box-buttons {
+    grid-area: box-buttons;
+    position: relative;
+    background-color: var(--color-1E2122);
+    padding: 20px;
+    border-radius: 23px;
+  }
+}

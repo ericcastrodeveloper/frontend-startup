@@ -18,21 +18,13 @@
   >
     <div class="buttons-social buttons-social--like">
       <div class="button">
-        <svg class="icon__like">
+        <div class="icon__notify--number">
+          {{ post.likes.length }}
+        </div>
+        <svg class="icon__like" (click)="likePost(post)">
           <use xlink:href="assets/sprite.svg#like" />
         </svg>
         <app-tooltip class="tooltip--disable" [label]="'Curtir'"></app-tooltip>
-      </div>
-    </div>
-    <div class="buttons-social buttons-social--share">
-      <div class="button">
-        <svg class="icon__label">
-          <use xlink:href="assets/sprite.svg#share" />
-        </svg>
-        <app-tooltip
-          class="tooltip--disable"
-          [label]="'Compartilhar'"
-        ></app-tooltip>
       </div>
     </div>
     <div class="buttons-social buttons-social--comment">
@@ -59,27 +51,25 @@
           </svg>
         </div>
         <div class="preview__label">
-          São Paulo / SP
+          {{ post.cep }}
         </div>
       </div>
     </div>
     <div class="preview-info">
       <div class="preview-icon">
         <div class="preview-icon--flex">
-          <div class="preview-icon--muscle">
+          <div *ngIf="post.helpWork" class="preview-icon--muscle">
             <svg class="icon__muscle">
               <use xlink:href="assets/sprite.svg#muscle" />
             </svg>
           </div>
-          <div class="preview-icon--money-bag">
+          <div *ngIf="post.helpBudget" class="preview-icon--money-bag">
             <svg class="icon__money-bag">
               <use xlink:href="assets/sprite.svg#money-bag" />
             </svg>
           </div>
         </div>
-        <div class="preview__label">
-          Tipo de ajuda
-        </div>
+        <div class="preview__label">Tipo de ajuda</div>
       </div>
     </div>
     <div class="preview-info">
@@ -89,9 +79,7 @@
             <use xlink:href="assets/sprite.svg#nicho-tecnology" />
           </svg>
         </div>
-        <div class="preview__label">
-          Tecnologia
-        </div>
+        <div class="preview__label">{{post.category}}</div>
       </div>
     </div>
   </div>
@@ -111,16 +99,33 @@
     </div>
     <div class="squad-button">
       <div class="faq">
-        <label>FAQ</label>
+        <label>Contato</label>
       </div>
     </div>
   </div>
   <div
     [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
-    class="post-description"
-  >
+    class="post-description">
+    <label class="titulo">
+      Como ajudar?
+    </label>
+    <label class="description">
+      {{ post.howHelp }}
+    </label>
+    <label class="titulo">
+      Descrição
+    </label>
     <label class="description">
       {{ post.description }}
+    </label>
+    <label class="titulo">
+      Contato
+    </label>
+    <label class="description">
+      Celular: {{ post.cellphone }}
+    </label>
+    <label class="description">
+      Email: {{ post.email }}
     </label>
   </div>
   <app-loader

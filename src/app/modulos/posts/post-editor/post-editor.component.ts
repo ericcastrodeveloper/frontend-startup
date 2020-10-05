@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Base64Component } from 'src/app/shared/components/base64/base64.component';
 import { PostSaveDTO } from 'src/app/shared/dto/post-save.dto';
 import { ApiService } from 'src/app/shared/service/api.service';
-
 @Component({
   selector: 'app-post-editor',
   templateUrl: './post-editor.component.html',
@@ -28,7 +27,13 @@ export class PostEditorComponent implements OnInit {
         position: 1,
         principal: true,
         file: null
-      }]
+      }],
+      addressComplement: '',
+      helpBudget: false,
+      helpWork: false,
+      cellphone: '',
+      cep: '',
+      responsible: ''
     };
   }
 
@@ -89,6 +94,28 @@ export class PostEditorComponent implements OnInit {
         this.loader = false;
       }
     })
+  }
+
+  changeCheckbocFinanceiro(value: boolean){
+    if(value == false) {
+      this.post.helpBudgetAmount = null;
+    }
+    this.post.helpBudget = value;
+  }
+
+  changeCheckbocMaoDeObra(value: boolean){
+    if(value == false) {
+      this.post.helpWorkCategory = null;
+    }
+    this.post.helpWork = value;
+  }
+
+  changeHowHelpWorkCategory(value: string) {
+    this.post.helpWorkCategory = value;
+  }
+
+  changeCategory(value: string) {
+    this.post.category = value;
   }
 
   savePost() {

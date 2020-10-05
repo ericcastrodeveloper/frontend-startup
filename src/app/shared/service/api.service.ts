@@ -2,21 +2,26 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { delay, map, tap } from 'rxjs/operators';
+import { LikeSaveDTO } from '../dto/like-save.dto';
+import { LoginDTO } from '../dto/login.dto';
 import { PostAlterDTO } from '../dto/post-alter.dto';
 import { PostSaveDTO } from '../dto/post-save.dto';
+import { UserSaveDTO } from '../dto/user-save.dto';
 import { PostModel } from '../model/post.model';
+import { UserModel } from '../model/user.model';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ApiService {
 
-    private urlAPI = 'http://localhost:8081/v1/post';
+    private urlApi = 'http://localhost:8081/v1/post';
+    private urlApiUser = 'http://localhost:8082/v1/user';
 
     constructor(private httpClient: HttpClient) { }
 
     listPost(): Observable<PostModel[]> {
-        return this.httpClient.get(`${this.urlAPI}`).pipe(
+        return this.httpClient.get(`${this.urlApi}`).pipe(
             tap({
                 error: error => {
                     console.log(error);
@@ -28,7 +33,7 @@ export class ApiService {
     }
 
     getPost(id: number): Observable<PostModel> {
-        return this.httpClient.get(`${this.urlAPI}/${id}`).pipe(
+        return this.httpClient.get(`${this.urlApi}/${id}`).pipe(
             tap({
                 error: error => {
                     console.log(error);
@@ -54,7 +59,7 @@ export class ApiService {
     }
 
     savePost(post: PostSaveDTO): Observable<PostModel> {
-        return this.httpClient.post(`${this.urlAPI}`, post).pipe(
+        return this.httpClient.post(`${this.urlApi}`, post).pipe(
             tap({
                 error: error => {
                     console.log(error);
@@ -65,8 +70,32 @@ export class ApiService {
         )
     }
 
+    saveUser(user: UserSaveDTO): Observable<UserModel> {
+        return this.httpClient.post(`${this.urlApiUser}`, user).pipe(
+            tap({
+                error: error => {
+                    console.log(error);
+                }
+            }),
+            delay(200),
+            map(response => response as UserModel)
+        )
+    }
+
+    logar(user: LoginDTO): Observable<UserModel> {
+        return this.httpClient.post(`${this.urlApiUser}/logar`, user).pipe(
+            tap({
+                error: error => {
+                    console.log(error);
+                }
+            }),
+            delay(200),
+            map(response => response as UserModel)
+        )
+    }
+
     alterPost(id: number, post: PostAlterDTO): Observable<PostModel> {
-        return this.httpClient.put(`${this.urlAPI}/${id}`, post).pipe(
+        return this.httpClient.put(`${this.urlApi}/${id}`, post).pipe(
             tap({
                 error: error => {
                     console.log(error);
@@ -78,7 +107,19 @@ export class ApiService {
     }
 
     deletePost(id: number): Observable<PostModel> {
-        return this.httpClient.delete(`${this.urlAPI}/${id}`).pipe(
+        return this.httpClient.delete(`${this.urlApi}/${id}`).pipe(
+            tap({
+                error: error => {
+                    console.log(error);
+                }
+            }),
+            delay(200),
+            map(response => response as PostModel)
+        )
+    }
+
+    saveLike(like: LikeSaveDTO): Observable<PostModel> {
+        return this.httpClient.post(`${this.urlApi}/${like.idPost}/like`, like).pipe(
             tap({
                 error: error => {
                     console.log(error);

@@ -1,0 +1,47 @@
+<div class="container">
+  <app-navbar class="nav"></app-navbar>
+  <div
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="box-inputs"
+  >
+    <div class="img">
+      <img class="img-user" src="assets/user-icon.jpg" alt="user icon" />
+    </div>
+    <div class="input">
+      <label class="input__label">E-mail</label>
+      <input
+        type="text"
+        name="email"
+        [(ngModel)]="user.email"
+        placeholder="E-mail"
+      />
+    </div>
+    <div class="input">
+      <label class="input__label">Senha</label>
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="user.password"
+        placeholder="Senha"
+      />
+    </div>
+  </div>
+  <div
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+    class="box-buttons"
+  >
+    <div class="button--save" (click)="logar()">
+      <svg class="icon__save">
+        <use xlink:href="assets/sprite.svg#login" />
+      </svg>
+      <app-tooltip class="tooltip--disable" [label]="'Save'"></app-tooltip>
+    </div>
+  </div>
+  <app-loader
+    [ngClass]="loader == true ? 'loader--active' : 'loader--disable'"
+  ></app-loader>
+  <app-snackbar
+    (callbackClick)="confirmSnack()"
+    [ngClass]="snackbar == true ? 'loader--active' : 'loader--disable'"
+  ></app-snackbar>
+</div>

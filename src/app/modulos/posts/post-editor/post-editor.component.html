@@ -5,12 +5,12 @@
     class="box-inputs"
   >
     <div class="input">
-      <label class="input__label">Titulo</label>
+      <label class="input__label">Título</label>
       <input
         type="text"
         name="title"
         [(ngModel)]="post.title"
-        placeholder="Titulo"
+        placeholder="Título"
       />
     </div>
     <div class="input">
@@ -26,12 +26,118 @@
       <div class="box-img" *ngFor="let img of post.files">
         <img (click)="openExplorer(img)" [src]="img.data" alt="Imagem" />
         <input
-          [id]="'image-'+img.id"
+          [id]="'image-' + img.id"
           type="file"
           (change)="changeFile($event, img)"
           placeholder="Principal image"
         />
       </div>
+    </div>
+    <div class="input">
+      <label class="input__label input__label--checkbox">Tipo de Ajuda</label>
+      <div class="checkbox-container">
+        <div class="checkbox">
+          <input
+            type="checkbox"
+            style="width: 25px !important; height: 35px; margin-right: 11px"
+            id="financeira"
+            [(ngModel)]="post.helpBudget"
+            (change)="changeCheckbocFinanceiro($event.target.checked)"
+          />
+          <label class="input__label" for="financeira">Financeira</label>
+        </div>
+        <div class="checkbox">
+          <input
+            type="checkbox"
+            style="width: 25px !important; height: 35px; margin-right: 11px"
+            id="mao_de_obra"
+            [(ngModel)]="post.helpWork"
+            (change)="changeCheckbocMaoDeObra($event.target.checked)"
+          />
+          <label class="input__label" for="mao_de_obra">Mão de obra</label>
+        </div>
+      </div>
+      <label *ngIf="post.helpBudget" class="input__label input__label">Quanto?</label>
+      <input
+        style="margin-bottom: 10px;"
+        *ngIf="post.helpBudget"
+        type="text"
+        name="responsible"
+        [(ngModel)]="post.helpBudgetAmount"
+        placeholder="Valor que precisa em reais"
+      />
+      <label *ngIf="post.helpWork" class="input__label">Categoria</label>
+      <select [(ngModel)]="post.helpWorkCategory" (change)="changeHowHelpWorkCategory($event.target.value)" *ngIf="post.helpWork">
+        <option selected value="">Selecione uma profissão</option>
+        <option value="Desenvolvedor JAVA">Desenvolvedor JAVA</option>
+        <option value="Desenvolvedor Angular">Desenvolvedor Angular</option>
+        <option value="Desenvolvedor React">Desenvolvedor React</option>
+      </select>
+    </div>
+    <div class="input">
+      <label class="input__label">Como Ajudar?</label>
+      <textarea
+        type="text"
+        [(ngModel)]="post.howHelp"
+        placeholder="Descreva como vai apresentar seu pedido de ajuda"
+      ></textarea>
+    </div>
+    <div class="input">
+      <label class="input__label">Categoria Projeto</label>
+      <select [(ngModel)]="post.category" (change)="changeCategory($event.target.value)">
+        <option value="">Selecione uma categoria</option>
+        <option value="Tecnologia">Tecnologia</option>
+      </select>
+    </div>
+    <div class="divider"></div>
+    <div class="input">
+      <label class="input__label input__label">Responsável</label>
+      <input
+        type="text"
+        name="responsible"
+        [(ngModel)]="post.responsible"
+        placeholder="Responsável"
+      />
+    </div>
+    <div class="divider"></div>
+    <div class="input">
+      <label class="input__label input__label">CEP</label>
+      <input
+        type="text"
+        name="cep"
+        [(ngModel)]="post.cep"
+        placeholder="CEP"
+        mask="99999-999"
+      />
+    </div>
+    <div class="input">
+      <label class="input__label input__label">Complemento</label>
+      <input
+        type="text"
+        name="addressComplement"
+        [(ngModel)]="post.addressComplement"
+        placeholder="Complemento"
+      />
+    </div>
+    <div class="divider"></div>
+    <div class="input">
+      <label class="input__label">Celular</label>
+      <input
+        type="text"
+        name="cellphone"
+        [(ngModel)]="post.cellphone"
+        placeholder="Celular"
+        mask="99999-9999"
+      />
+    </div>
+    <div class="input">
+      <label class="input__label">E-mail</label>
+      <input
+        type="text"
+        name="email"
+        [(ngModel)]="post.email"
+        placeholder="E-mail"
+      />
     </div>
   </div>
   <div

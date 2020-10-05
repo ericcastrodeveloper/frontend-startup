@@ -17,7 +17,9 @@ import { PostsListsYoursComponent } from './modulos/posts/posts-lists-yours/post
 import { MessagesListComponent } from './modulos/messages/messages-list/messages-list.component';
 import { ContactsListComponent } from './modulos/contacts/contacts-list/contacts-list.component';
 import { TooltipNotifyComponent } from './shared/components/tooltip-notify/tooltip-notify.component';
-
+import { NgxMaskModule,  } from 'ngx-mask';
+import { SignInComponent } from './modulos/login/signIn/signIn.component';
+import { SignUpComponent } from './modulos/login/signUp/signUp.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,12 +35,15 @@ import { TooltipNotifyComponent } from './shared/components/tooltip-notify/toolt
     PostsListsYoursComponent,
     MessagesListComponent,
     ContactsListComponent,
-    TooltipNotifyComponent
+    TooltipNotifyComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    NgxMaskModule.forRoot(),
     HttpClientModule
   ],
   providers: [Base64Component],

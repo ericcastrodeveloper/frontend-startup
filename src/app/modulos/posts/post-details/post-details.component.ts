@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/shared/service/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { PostModel } from 'src/app/shared/model/post.model';
+import { LikeSaveDTO } from 'src/app/shared/dto/like-save.dto';
 
 @Component({
   selector: 'app-post-details',
@@ -46,6 +47,20 @@ export class PostDetailsComponent implements OnInit {
         this.loader = false;
       }
     })
+  }
+
+  likePost(post: PostModel) {
+
+    const like: LikeSaveDTO = {
+      idPost: post.id,
+      idUser: 0
+    }
+
+    this.apiPost.saveLike(like).subscribe({
+      next: result => {
+        this.post = result;
+      }
+    });
   }
 
 }

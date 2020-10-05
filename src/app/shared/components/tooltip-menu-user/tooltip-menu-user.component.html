@@ -1,1 +1,6 @@
-<span class="tooltip" routerLink="/post/add">Nova Projeto</span>
+<div class="container-tooltip">
+  <span *ngIf="!isLogged" class="tooltip" routerLink="/login/signUp">Logar</span>
+  <span *ngIf="!isLogged" class="tooltip" routerLink="/login/signIn">Cadastre-se</span>
+  <span *ngIf="isLogged" class="tooltip" routerLink="/post/add">Nova Projeto</span>
+  <span *ngIf="isLogged" class="tooltip" (click)="logout()">Logout</span>
+</div>

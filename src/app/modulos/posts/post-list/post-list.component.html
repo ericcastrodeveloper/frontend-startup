@@ -1,21 +1,23 @@
 <div class="container">
   <app-navbar class="nav"></app-navbar>
-  <div class="info-user sidebar" [ngClass]="loader == true ? 'loader--disable' : 'loader--active'">
+  <div
+    class="info-user sidebar"
+    [ngClass]="loader == true ? 'loader--disable' : 'loader--active'"
+  >
     <div class="info-user__img">
       <img class="img-user" src="assets/user-icon.jpg" alt="user icon" />
     </div>
-    <div class="info-user__welcome">
-      Olá, Fulano
+    <div *ngIf="isLogged" class="info-user__welcome">
+      Olá, {{ user.firstName }}
+    </div>
+    <div *ngIf="!isLogged" class="info-user__welcome info-user__welcome--small">
+      Olá, realize login para mais funcionalidades!
     </div>
     <div class="info-user__top-3">
-      <div class="top-3">
-          TOP 3 IDEAS DA SEMANA
-      </div>
+      <div class="top-3">TOP 3 IDEAS DA SEMANA</div>
     </div>
-    <div class="info-user__yours-idea">
-      <div class="yours-idea">
-          SUAS IDEIAS
-      </div>
+    <div *ngIf="isLogged" class="info-user__yours-idea">
+      <div class="yours-idea">SUAS IDEIAS</div>
     </div>
   </div>
   <section
@@ -33,7 +35,10 @@
         <div class="card-post__description">
           {{ post.description }}
         </div>
-        <div [routerLink]="['/post/details', post.id]" class="card-post__img-principal">
+        <div
+          [routerLink]="['/post/details', post.id]"
+          class="card-post__img-principal"
+        >
           <img
             class="img-principal"
             [src]="post.files[0].data"
@@ -42,18 +47,21 @@
         </div>
         <div class="card-post__buttons">
           <div class="button__like">
-            <svg class="icon__like">
+            <div class="icon__notify--number">
+              {{ post.likes.length }}
+            </div>
+            <svg class="icon__like" (click)="isLogged ? likePost(post) : null">
               <use xlink:href="assets/sprite.svg#like" />
             </svg>
           </div>
-          <div class="button__later">
+          <div *ngIf="isLogged" class="button__later">
             <svg class="icon__later">
               <use xlink:href="assets/sprite.svg#folder" />
             </svg>
           </div>
-          <div class="button__share">
+          <div *ngIf="isLogged" class="button__share">
             <svg class="icon__label">
-              <use xlink:href="assets/sprite.svg#share" />
+              <use xlink:href="assets/sprite.svg#talk" />
             </svg>
           </div>
         </div>

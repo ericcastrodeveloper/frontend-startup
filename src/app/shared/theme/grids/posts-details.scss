@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: minmax(14vw, 14vw) minmax(70vw, 70vw) minmax(14vw, auto);
-  grid-template-rows: 10vh minmax(50vh, 50vh) 40px 10vh 8vh 17vh 40vh;
+  grid-template-rows: 10vh minmax(50vh, 50vh) 40px 10vh 8vh 17vh auto 10vh;
 
   grid-template-areas:
     "navbar navbar navbar"

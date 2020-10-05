@@ -1,4 +1,4 @@
-.tooltip {
+.container-tooltip {
   width: 173px;
   color: var(--color-E4E4E4);
   background: var(--color-101010);
@@ -14,9 +14,11 @@
   animation: cubic-bezier(0.17, 0.67, 0.78, -0.16);
   padding: 6px;
   z-index: 2;
+  flex-wrap: wrap;
+  align-content: baseline;
 }
 
-.tooltip:after {
+.container-tooltip:after {
   content: "";
   display: block;
   position: absolute;
@@ -27,4 +29,9 @@
   height: 0;
   border: 5px solid transparent;
   border-bottom-color: var(--color-ED145B);
+}
+
+.tooltip {
+  width: 100%;
+  height: 16px;
 }
