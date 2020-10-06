@@ -15,8 +15,8 @@ import { UserModel } from '../model/user.model';
 })
 export class ApiService {
 
-    private urlApi = 'http://localhost:8081/v1/post';
-    private urlApiUser = 'http://localhost:8082/v1/user';
+    private urlApi = 'http://v1-posts/v1/post';
+    private urlApiUser = 'http://v1-users/v1/user';
 
     constructor(private httpClient: HttpClient) { }
 
